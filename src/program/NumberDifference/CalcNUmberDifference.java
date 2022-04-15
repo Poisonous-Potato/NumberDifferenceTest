@@ -33,7 +33,7 @@ public class CalcNUmberDifference {
 		String message;
 		int group;
 		
-		message = "Difference : " + diff; 
+		message = "Difference: " + diff; 
 		if(diff>50) {
 			group = 3;
 		}else if(diff>=11 && diff<50) { 
@@ -47,14 +47,14 @@ public class CalcNUmberDifference {
 		if(group>0){
 			message = message + "\nGroup " + group + ", ";
 		}else{
-			message = message + "\nNon Group ";
+			message = message + "\nNon group, ";
 		}
 		
 		switch(group) {
-			case 1: message = message + "Small Difference"; 
+			case 1: message = message + "Small Difference"; break;
 			case 2: message = message + "Medium Difference"; break;
-			case 3: message = message + "Large Differece"; break;
-			case 4: message = message + "There's no difference"; break;
+			case 3: message = message + "Large Difference"; break;
+			default: message = message + "There's no difference"; break;
 		}
 		
 		return message;

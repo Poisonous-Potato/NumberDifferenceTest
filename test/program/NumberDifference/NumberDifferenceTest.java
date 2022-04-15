@@ -22,7 +22,7 @@ public class NumberDifferenceTest {
 	}
 
 	@Test
-	public void nOutOfRange_01() {
+	public void nOutOfRange_01() { // TC18
 		// (1) setup (arrange, build)
 		int n;
 		boolean actual, expected;
@@ -37,7 +37,7 @@ public class NumberDifferenceTest {
 	}
 	
 	@Test
-	public void nOutOfRange_02() {
+	public void nOutOfRange_02() { // TC19
 		// (1) setup (arrange, build)
 		int n;
 		boolean actual, expected;
@@ -62,6 +62,74 @@ public class NumberDifferenceTest {
 		// (2) exercise (act, operate)
 		actual = sut.validateRangeInputMaxDeret(jumlahDeretBil);
 		
+		// (3) verify (assert, check)
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void nonGroup_01() { // TC01
+		// (1) setup (arrange, build)
+		int diff;
+		String actual, expected;
+		diff = 0;
+		expected = "Difference: " + diff; 
+		expected = expected + "\nNon group, ";
+		expected = expected + "There's no difference";
+
+		// (2) exercise (act, operate)
+		actual = sut.groupingDifference(diff);
+
+		// (3) verify (assert, check)
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void group1_01() { // TC10
+		// (1) setup (arrange, build)
+		int diff;
+		String actual, expected;
+		diff = 5;
+		expected = "Difference: " + diff; 
+		expected = expected + "\nGroup 1, ";
+		expected = expected + "Small Difference";
+
+		// (2) exercise (act, operate)
+		actual = sut.groupingDifference(diff);
+
+		// (3) verify (assert, check)
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void group2_01() { // TC07
+		// (1) setup (arrange, build)
+		int diff;
+		String actual, expected;
+		diff = 25;
+		expected = "Difference: " + diff; 
+		expected = expected + "\nGroup 2, ";
+		expected = expected + "Medium Difference";
+
+		// (2) exercise (act, operate)
+		actual = sut.groupingDifference(diff);
+
+		// (3) verify (assert, check)
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void group3_01() { // TC03
+		// (1) setup (arrange, build)
+		int diff;
+		String actual, expected;
+		diff = 100;
+		expected = "Difference: " + diff; 
+		expected = expected + "\nGroup 3, ";
+		expected = expected + "Large Difference";
+
+		// (2) exercise (act, operate)
+		actual = sut.groupingDifference(diff);
+
 		// (3) verify (assert, check)
 		assertEquals(expected, actual);
 	}
