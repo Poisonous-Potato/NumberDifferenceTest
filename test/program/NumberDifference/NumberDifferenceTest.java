@@ -22,22 +22,37 @@ public class NumberDifferenceTest {
 	}
 
 	@Test
-	public void testInputNBilLuarRange_01() {
+	public void nOutOfRange_01() {
 		// (1) setup (arrange, build)
-		int jumlahDeretBil;
+		int n;
 		boolean actual, expected;
-		jumlahDeretBil = 15; // bukan berada pada range 1-10
+		n = 0; // n below range
 		expected = false;
 		
 		// (2) exercise (act, operate)
-		actual = sut.validateRangeInputMaxDeret(jumlahDeretBil);
+		actual = sut.validateRangeInputMaxDeret(n);
 		
 		// (3) verify (assert, check)
 		assertEquals(expected, actual);
 	}
 	
 	@Test
-	public void testInputNBilDalamRange_01() {
+	public void nOutOfRange_02() {
+		// (1) setup (arrange, build)
+		int n;
+		boolean actual, expected;
+		n = 11; // n above range
+		expected = false;
+		
+		// (2) exercise (act, operate)
+		actual = sut.validateRangeInputMaxDeret(n);
+		
+		// (3) verify (assert, check)
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	public void nInsideOfRange_01() {
 		// (1) setup (arrange, build)
 		int jumlahDeretBil;
 		boolean actual, expected;
