@@ -1,4 +1,4 @@
-package program.NumberDifference;
+package program.number_difference;
 
 import static org.junit.Assert.*;
 

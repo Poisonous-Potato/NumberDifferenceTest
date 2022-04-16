@@ -1,4 +1,4 @@
-package program.NumberDifference;
+package program.number_difference;
 
 import java.util.ArrayList;
 import java.util.Scanner;

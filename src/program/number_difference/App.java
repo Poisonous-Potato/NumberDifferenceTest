@@ -1,4 +1,4 @@
-package program.NumberDifference;
+package program.number_difference;
 
 /**
  * Hello world!
