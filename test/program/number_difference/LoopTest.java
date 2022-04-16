@@ -17,9 +17,9 @@ public class LoopTest extends NumberDifferenceTest {
 	@Parameters
 	public static Collection<Object[]> data() {
 		return Arrays.asList(new Object[][] {
-			{new ArrayList<Integer>(Arrays.asList(200, 100)), 100},
-			{new ArrayList<Integer>(Arrays.asList(300, 200, 100)), 200},
-			{new ArrayList<Integer>(Arrays.asList(1000, 900, 800, 700, 600, 500, 400, 300, 200, 100)), 900}
+			{new ArrayList<Integer>(Arrays.asList(200, 100)), 100},											// TC03
+			{new ArrayList<Integer>(Arrays.asList(300, 200, 100)), 200},									// TC15
+			{new ArrayList<Integer>(Arrays.asList(1000, 900, 800, 700, 600, 500, 400, 300, 200, 100)), 900}	// TC16
 		});
 	}
 

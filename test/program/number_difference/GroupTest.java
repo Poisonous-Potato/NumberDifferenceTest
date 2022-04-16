@@ -16,7 +16,15 @@ public class GroupTest extends NumberDifferenceTest {
 	@Parameters
 	public static Collection<Object[]> data() {
 		return Arrays.asList(new Object[][] {
-			{0}, {5}, {1}, {10}, {25}, {11}, {50}, {100}, {51}
+			{0},	// TC01
+			{5}, 	// TC10	
+			{1},	// TC11 
+			{10},	// TC12 
+			{25},	// TC07
+			{11},	// TC08
+			{50}, 	// TC09
+			{100},	// TC03
+			{51}	// TC04
 		});
 	}
 
