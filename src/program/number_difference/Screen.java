@@ -1,6 +1,7 @@
 package program.number_difference;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Screen {
@@ -25,10 +26,11 @@ public class Screen {
 		return data;
 	}
 	
-	public ArrayList<Integer> inputNumberListValue(int nBil) {
-		ArrayList<Integer> data = new ArrayList<Integer>();
+	public List<Integer> inputNumberListValue(int nBil) {
+		List<Integer> data = new ArrayList<>();
 		Scanner inputInt = new Scanner(System.in);
-		int idx, bil;
+		int idx;
+		int bil;
 		
 		for(idx=0; idx < nBil; idx++) {
 			bil = inputInt.nextInt();

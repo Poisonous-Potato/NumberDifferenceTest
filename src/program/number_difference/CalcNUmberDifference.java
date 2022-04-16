@@ -1,13 +1,15 @@
 package program.number_difference;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class CalcNUmberDifference {
 
 	// fungsi mengembalikan nilai selisih antara nilai terbesar dan terkecil
-	public int numberDiffirenceProcess(ArrayList<Integer> deretBil) {
+	public int numberDiffirenceProcess(List<Integer> deretBil) {
 		int difference = 0;
-		int min, max, idxDeretBil;
+		int min;
+		int max;
+		int idxDeretBil;
 		
 		min = deretBil.get(0);
 		max = deretBil.get(0);
@@ -64,10 +66,6 @@ public class CalcNUmberDifference {
 	// mengembalikan true, jika nilai N sesuai dengan range
 	// // sebaliknya mengembalikan false
 	public boolean validateRangeInputMaxDeret(int nBil) {
-		if(nBil>=1 && nBil<=10) { 
-			return true;
-		}else {
-			return false;
-		}
+		return nBil>=1 && nBil<=10;
 	}
 }
