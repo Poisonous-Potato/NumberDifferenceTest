@@ -1,6 +1,9 @@
-package program.NumberDifference;
+package program.number_difference;
+
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Before;
+import org.junit.Test;
 
 public class NumberDifferenceTest {
 	protected CalcNUmberDifference sut;
@@ -18,4 +21,8 @@ public class NumberDifferenceTest {
 		sut = new CalcNUmberDifference();
 	}
 
+	@Test
+	public void testClass() {
+		assertNotNull(sut);
+	}
 }
