@@ -1,6 +1,5 @@
 package program.number_difference;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class NumberDifferenceFlow {
@@ -10,7 +9,7 @@ public class NumberDifferenceFlow {
 		CalcNUmberDifference proc = new CalcNUmberDifference();
     	int nBil;
 		int differenceBil;
-    	List<Integer> deretBil = new ArrayList<>();
+    	List<Integer> deretBil;
     	String messageGroup;
     	
     	layout.printHeader();
