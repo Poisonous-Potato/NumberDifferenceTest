@@ -2,50 +2,41 @@ package program.number_difference;
 
 import static org.junit.Assert.*;
 
-import org.junit.Test;
+import java.util.Arrays;
+import java.util.Collection;
 
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
+
+@RunWith(Parameterized.class)
 public class NTest extends NumberDifferenceTest {
     
+	@Parameters
+	public static Collection<Object[]> data() {
+		return Arrays.asList(new Object[][] {
+			{0, false},		// TC18
+			{11, false},	// TC19
+			{5, true}
+		});
+	}
+
+	private final int n;
+	private final boolean expected;
+
+	public NTest(int n, boolean expected) {
+		this.n = n;
+		this.expected = expected;
+	}
+
 	@Test
-	public void nOutOfRange_01() { // TC18
+	public void doTest() {
 		// (1) setup (arrange, build)
-		int n;
-		boolean actual, expected;
-		n = 0; // n below range
-		expected = false;
+		boolean actual;
 		
 		// (2) exercise (act, operate)
 		actual = sut.validateRangeInputMaxDeret(n);
-		
-		// (3) verify (assert, check)
-		assertEquals(expected, actual);
-	}
-	
-	@Test
-	public void nOutOfRange_02() { // TC19
-		// (1) setup (arrange, build)
-		int n;
-		boolean actual, expected;
-		n = 11; // n above range
-		expected = false;
-		
-		// (2) exercise (act, operate)
-		actual = sut.validateRangeInputMaxDeret(n);
-		
-		// (3) verify (assert, check)
-		assertEquals(expected, actual);
-	}
-	
-	@Test
-	public void nInsideOfRange_01() {
-		// (1) setup (arrange, build)
-		int jumlahDeretBil;
-		boolean actual, expected;
-		jumlahDeretBil = 5; // berada pada range 1-10
-		expected = true;
-		
-		// (2) exercise (act, operate)
-		actual = sut.validateRangeInputMaxDeret(jumlahDeretBil);
 		
 		// (3) verify (assert, check)
 		assertEquals(expected, actual);

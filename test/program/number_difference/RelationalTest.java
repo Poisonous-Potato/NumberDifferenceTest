@@ -4,48 +4,37 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 
+@RunWith(Parameterized.class)
 public class RelationalTest extends NumberDifferenceTest {
+
+	@Parameters
+	public static Collection<Object[]> data() {
+		return Arrays.asList(new Object[][] {
+			{new ArrayList<Integer>(Arrays.asList(100, 100)), 0},		// TC14
+			{new ArrayList<Integer>(Arrays.asList(100, 200)), 100},		// TC13
+			{new ArrayList<Integer>(Arrays.asList(200, 100)), 100}		// TC03
+		});
+	}
     
-	@Test
-	public void equal_01() { // TC14
-		// (1) setup (arrange, build)
-        ArrayList<Integer> series;
-		int actual, expected;
-        series = new ArrayList<Integer>(Arrays.asList(100, 100));
-        expected = 0;
+	private final ArrayList<Integer> series;
+	private final int expected;
 
-		// (2) exercise (act, operate)
-        actual = sut.numberDiffirenceProcess(series);
-
-		// (3) verify (assert, check)
-		assertEquals(expected, actual);
+	public RelationalTest(ArrayList<Integer> series, int expected) {
+		this.series = series;
+		this.expected = expected;
 	}
 
 	@Test
-	public void min_01() { // TC13
+	public void doTest() {
 		// (1) setup (arrange, build)
-        ArrayList<Integer> series;
-		int actual, expected;
-        series = new ArrayList<Integer>(Arrays.asList(100, 200));
-        expected = 100;
-
-		// (2) exercise (act, operate)
-        actual = sut.numberDiffirenceProcess(series);
-
-		// (3) verify (assert, check)
-		assertEquals(expected, actual);
-	}
-
-	@Test
-	public void max_01() { // TC03
-		// (1) setup (arrange, build)
-        ArrayList<Integer> series;
-		int actual, expected;
-        series = new ArrayList<Integer>(Arrays.asList(200, 100));
-        expected = 100;
+		int actual;
 
 		// (2) exercise (act, operate)
         actual = sut.numberDiffirenceProcess(series);
